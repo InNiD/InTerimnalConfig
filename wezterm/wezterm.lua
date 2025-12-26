@@ -60,7 +60,7 @@ wezterm.on("gui-startup", function(cmd)
     end
 
     -- 初始化窗口
-    local ratio = 0.75
+    local ratio = 0.8
     local width, height = screen.width * ratio, screen.height * ratio
     -- local width, height = 800, 500  --指定窗口宽高，单位 px
     local tab, pane, window = wezterm.mux.spawn_window(cmd or {

@@ -4,7 +4,7 @@ local module = {}
 function module.apply(config)
     -- Theme
     -- config.color_scheme = 'Catppuccin Frappe'
-    -- config.color_scheme = 'Catppuccin Macchiato'
+    config.color_scheme = 'Catppuccin Macchiato'
     -- config.color_scheme = 'Catppuccin Mocha'
     -- config.color_scheme = 'Everforest Dark (Gogh)'
     -- config.color_scheme = 'nord'
@@ -15,7 +15,7 @@ function module.apply(config)
     -- config.color_scheme = 'tokyonight_moon'
     -- config.color_scheme = 'tokyonight_storm'
     -- config.color_scheme = 'Gruvbox (Gogh)'
-    config.color_scheme = 'Gruvbox Dark (Gogh)'
+    -- config.color_scheme = 'Gruvbox Dark (Gogh)'
     -- config.color_scheme = 'Material'
     -- config.color_scheme = 'Material (base16)'
     -- config.color_scheme = 'Material Palenight (base16)'
@@ -31,13 +31,14 @@ function module.apply(config)
     config.font_size = 16
 
     -- Tab
-    config.hide_tab_bar_if_only_one_tab = true
+    -- config.hide_tab_bar_if_only_one_tab = true
+    config.tab_bar_at_bottom = true
     -- 标签的标题渲染，false 表示使用复古样式
     config.use_fancy_tab_bar = false
 
     -- Padding
     config.window_padding = {
-        left = '1cell',
+        left = '0cell',
         right = '0cell',
         top = '0cell',
         bottom = '0cell',

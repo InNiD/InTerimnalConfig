@@ -6,6 +6,12 @@ function module.apply(config)
     config.keys = {
         -- Ctrl+Shift+N 新窗口
         -- { key = 'N', mods = 'SHIFT|CTRL', action = wezterm.action.SpawnWindow },
+        { key = 'y', mods = 'LEADER', action = wezterm.action.CopyTo 'ClipboardAndPrimarySelection', },
+        { key = 'v', mods = 'LEADER', action = wezterm.action.PasteFrom 'Clipboard' },
+        { key = 'u', mods = 'LEADER', action = wezterm.action.ScrollByPage(-0.5) },
+        { key = 'd', mods = 'LEADER', action = wezterm.action.ScrollByPage(0.5) },
+        { key = 'g', mods = 'LEADER', action = wezterm.action.ScrollToTop },
+        { key = 'G', mods = 'LEADER', action = wezterm.action.ScrollToBottom },
         -- Leader + F11 全屏
         {key = 'Enter', mods = 'LEADER', action = wezterm.action.ToggleFullScreen},
         -- Leader + m:隐藏窗口
@@ -34,10 +40,10 @@ function module.apply(config)
         {key = "RightArrow", mods = 'CTRL|SHIFT', action = wezterm.action.AdjustPaneSize({'Right', 5})},
         -- Leader + f:搜索
         {key = 'f', mods = 'LEADER', action = wezterm.action.Search('CurrentSelectionOrEmptyString')},
-        -- Leader + p:打开 Launcher
-        {key = 'p', mods = 'LEADER', action = wezterm.action.ShowLauncher},
-        -- Leader + k:清除滚动缓冲区
-        {key = 'k', mods = 'LEADER', action = wezterm.action.ClearScrollback('ScrollbackAndViewport')},
+        -- Leader + ::打开 Launcher
+        {key = ':', mods = 'LEADER', action = wezterm.action.ShowLauncher},
+        -- Leader + c:清除滚动缓冲区
+        {key = 'c', mods = 'LEADER', action = wezterm.action.ClearScrollback('ScrollbackAndViewport')},
         -- F1:帮助 / 命令面板
         {key = "F1", mods = 'LEADER', action = wezterm.action.ShowLauncherArgs {
             flags = "FUZZY|LAUNCH_MENU_ITEMS|DOMAINS|KEY_ASSIGNMENTS"
