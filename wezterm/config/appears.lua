@@ -3,8 +3,8 @@ local wezterm = require 'wezterm'
 local module = {}
 function module.apply(config)
     -- Theme
-    -- config.color_scheme = 'Catppuccin Frappe'
-    config.color_scheme = 'Catppuccin Macchiato'
+    config.color_scheme = 'Catppuccin Frappe'
+    -- config.color_scheme = 'Catppuccin Macchiato'
     -- config.color_scheme = 'Catppuccin Mocha'
     -- config.color_scheme = 'Everforest Dark (Gogh)'
     -- config.color_scheme = 'nord'

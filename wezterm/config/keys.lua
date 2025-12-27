@@ -7,11 +7,11 @@ function module.apply(config)
         -- Ctrl+Shift+N 新窗口
         -- { key = 'N', mods = 'SHIFT|CTRL', action = wezterm.action.SpawnWindow },
         { key = 'y', mods = 'LEADER', action = wezterm.action.CopyTo 'ClipboardAndPrimarySelection', },
-        { key = 'v', mods = 'LEADER', action = wezterm.action.PasteFrom 'Clipboard' },
+        { key = 'p', mods = 'LEADER', action = wezterm.action.PasteFrom 'Clipboard' },
         { key = 'u', mods = 'LEADER', action = wezterm.action.ScrollByPage(-0.5) },
         { key = 'd', mods = 'LEADER', action = wezterm.action.ScrollByPage(0.5) },
         { key = 'g', mods = 'LEADER', action = wezterm.action.ScrollToTop },
-        { key = 'G', mods = 'LEADER', action = wezterm.action.ScrollToBottom },
+        { key = 'g', mods = 'LEADER|SHIFT', action = wezterm.action.ScrollToBottom },
         -- Leader + F11 全屏
         {key = 'Enter', mods = 'LEADER', action = wezterm.action.ToggleFullScreen},
         -- Leader + m:隐藏窗口
@@ -21,18 +21,18 @@ function module.apply(config)
         -- Leader + w:关闭当前标签页(不确认)
         {key = 'w', mods = 'LEADER', action = wezterm.action.CloseCurrentTab({confirm = false})},
         -- Leader + Tab:切换到下一个标签页
-        {key = 'Tab', mods = 'LEADER', action = wezterm.action.ActivateTabRelative(1)},
+        {key = 'l', mods = 'LEADER', action = wezterm.action.ActivateTabRelative(1)},
         -- Leader + Shift + Tab:切换到上一个标签页
-        {key = 'Tab', mods = 'LEADER|SHIFT', action = wezterm.action.ActivateTabRelative(-1)},
+        {key = 'h', mods = 'LEADER', action = wezterm.action.ActivateTabRelative(-1)},
         -- Leader + \\:水平分割
         {key = '\\', mods = 'LEADER', action = wezterm.action.SplitHorizontal({domain = 'CurrentPaneDomain'})},
         -- Leader + -:垂直分割
         {key = '-', mods = 'LEADER', action = wezterm.action.SplitVertical({domain = 'CurrentPaneDomain'})},
         -- Leader + 方向键:在窗格之间移动
-        {key = "h", mods = 'LEADER', action = wezterm.action.ActivatePaneDirection('Left')},
-        {key = "j", mods = 'LEADER', action = wezterm.action.ActivatePaneDirection('Down')},
-        {key = "k", mods = 'LEADER', action = wezterm.action.ActivatePaneDirection('Up')},
-        {key = "l", mods = 'LEADER', action = wezterm.action.ActivatePaneDirection('Right')},
+        {key = "LeftArrow", mods = 'LEADER', action = wezterm.action.ActivatePaneDirection('Left')},
+        {key = "DownArrow", mods = 'LEADER', action = wezterm.action.ActivatePaneDirection('Down')},
+        {key = "UpArrow", mods = 'LEADER', action = wezterm.action.ActivatePaneDirection('Up')},
+        {key = "RightArrow", mods = 'LEADER', action = wezterm.action.ActivatePaneDirection('Right')},
         -- Ctrl + Shift + 方向键:调整窗格大小
         {key = "LeftArrow",  mods = 'CTRL|SHIFT', action = wezterm.action.AdjustPaneSize({'Left', 5})},
         {key = "DownArrow",  mods = 'CTRL|SHIFT', action = wezterm.action.AdjustPaneSize({'Down', 5})},
