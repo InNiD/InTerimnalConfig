@@ -24,6 +24,11 @@ function module.apply(config)
     -- config.enable_scroll_bar = true
 
     -- Font
+    -- Font Hack 'SF Mono' 'Dank Mono' 'Fantasque Sans Mono' '等距更纱黑体 SC'
+    -- 'Intel One Mono' 'MonacoLigaturized Nerd Font Mono' 'Monaco Nerd Font Mono'
+    -- Menlo 'Ubuntu Mono' 'Fira Code' 'Maple Mono Normal NF CN' 'Source Code Pro'
+    -- Ligconsolata Inconsolata Monocraft 'JetBrains Mono NL' 'JetBrains Mono'
+    -- consolaslxgw <-
     config.font = wezterm.font_with_fallback {
         { family = 'Maple Mono Normal NF CN', weight = 'Regular' },
         { family = 'consolaslxgw', weight = 'Regular'  },
