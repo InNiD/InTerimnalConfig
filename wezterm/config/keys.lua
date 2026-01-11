@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 
 local module = {}
 function module.apply(config)
-    config.leader = {key = "a", mods = "CTRL", timeout_milliseconds = 2000}
+    config.leader = {key = "a", mods = "ALT", timeout_milliseconds = 2000}
     config.keys = {
         -- Ctrl+Shift+N 新窗口
         -- { key = 'N', mods = 'SHIFT|CTRL', action = wezterm.action.SpawnWindow },
