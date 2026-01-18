@@ -1,1 +1,1 @@
-# My terminal config
+# My yazi config

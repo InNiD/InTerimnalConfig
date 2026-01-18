@@ -1,0 +1,54 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "d1c8baa"
+hash = "b16b6e08085a3dfec72335415e4c83ed"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "d1c8baa"
+hash = "e65e6528de15012b5ccdead4ed26b8bd"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "d1c8baa"
+hash = "30ef403674242202004bdc858cfeaf93"
+
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "a63550b"
+hash = "733c7340b1ca2d3ef274c427a0cf21b"
+
+[[plugin.deps]]
+use = "KKV9/compress"
+rev = "c264639"
+hash = "6224b2a21da242e0353a414456b411ee"
+
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "8f37dc5"
+hash = "57afbeb06b937f24f0e37cc11f5b5f9b"
+
+[[flavor.deps]]
+use = "Chromium-3-Oxide/everforest-medium"
+rev = "0158f0f"
+hash = "e6a51e72d652374ab50123c762f4bf"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:dracula"
+rev = "2d73b79"
+hash = "1e847fba729fab729faac63781245f03"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-mocha"
+rev = "2d73b79"
+hash = "29d1417458e1533d858d87093ef9aa55"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-macchiato"
+rev = "2d73b79"
+hash = "74c52ddeaa75a085bfb61b6a13b6cc97"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-frappe"
+rev = "2d73b79"
+hash = "13ee0ffe89ac90276afbd974aa94dbed"

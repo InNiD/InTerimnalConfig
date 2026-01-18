@@ -1,0 +1,57 @@
+[[input.prepend_keymap]]
+on   = "<Esc>"
+run  = "close"
+desc = "Cancel input"
+
+[[mgr.prepend_keymap]]
+on   = "<C-n>"
+for  = "windows"
+run  = 'shell "pwsh.exe" --block'
+desc = "Open PowerShell here"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "d" ]
+run  = "cd D:"
+desc = "Switch to D drive"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "c" ]
+run  = "cd C:"
+desc = "Switch to C drive"
+
+
+[[mgr.prepend_keymap]]
+on  = "M"
+run = "plugin mount"
+
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "a", "a" ]
+run  = "plugin compress"
+desc = "Archive selected files"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "a", "p" ]
+run  = "plugin compress -p"
+desc = "Archive selected files (password)"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "a", "h" ]
+run  = "plugin compress -ph"
+desc = "Archive selected files (password+header)"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "a", "l" ]
+run  = "plugin compress -l"
+desc = "Archive selected files (compression level)"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "a", "u" ]
+run  = "plugin compress -phl"
+desc = "Archive selected files (password+header+level)"
+
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "l" ]
+run  = "plugin lazygit"
+desc = "run lazygit"
