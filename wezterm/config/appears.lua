@@ -5,7 +5,7 @@ function module.apply(config)
     -- Background image
     config.window_background_image = "D:\\Picture\\IA\\IA10.jpg"
     config.window_background_image_hsb = {
-        brightness = 0.1,
+        brightness = 0.02,
         hue = 1.0,
         saturation = 1.0,
     }
