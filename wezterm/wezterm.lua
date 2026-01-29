@@ -1,33 +1,62 @@
-local wezterm = require 'wezterm'
+local wezterm = require "wezterm"
 local config = wezterm.config_builder()
 
 -- 外观配置
-local appears = require 'config.appears'
+local appears = require "config.appears"
 appears.apply(config)
 -- shell 菜单配置
-local launch = require 'config.launch'
+local launch = require "config.launch"
 launch.apply(config)
 -- 快捷键配置
-local keys = require 'config.keys'
+local keys = require "config.keys"
 keys.apply(config)
 -- 鼠标配置
-local mouse = require 'config.mouse'
+local mouse = require "config.mouse"
 mouse.apply(config)
 
 -- GPU渲染
--- config.front_end = 'WebGpu'
+-- config.front_end = "WebGpu"
 -- 高性能模式
--- config.webgpu_power_preference = 'HighPerformance'
+-- config.webgpu_power_preference = "HighPerformance"
 -- 最大帧率
 -- config.max_fps = 165
 
 -- 超链接处理
 config.hyperlink_rules = {
-    -- 匹配带括号的链接格式 [text](url) 或 {url}
-    {regex = '\\[(.*?)\\]\\((https?://[^)]+)\\)', format = '$2'},
-    {regex = '\\{(https?://\\S+)\\}', format = '$1'},
-    -- 匹配纯URL（排除末尾标点）
-    {regex = '\\bhttps?://[^\\s<>"\'`]+[^\\s<>"\'`.,;!?]', format = '$0'}
+    -- Matches: a URL in parens: (URL)
+    {
+        regex = "\\((\\w+://\\S+)\\)",
+        format = "$1",
+        highlight = 1,
+    },
+    -- Matches: a URL in brackets: [URL]
+    {
+        regex = "\\[(\\w+://\\S+)\\]",
+        format = "$1",
+        highlight = 1,
+    },
+    -- Matches: a URL in curly braces: {URL}
+    {
+        regex = "\\{(\\w+://\\S+)\\}",
+        format = "$1",
+        highlight = 1,
+    },
+    -- Matches: a URL in angle brackets: <URL>
+    {
+        regex = "<(\\w+://\\S+)>",
+        format = "$1",
+        highlight = 1,
+    },
+    -- Then handle URLs not wrapped in brackets
+    {
+        regex = "\\b\\w+://\\S+[)/a-zA-Z0-9-]+",
+        format = "$0",
+    },
+    -- implicit mailto link
+    {
+        regex = "\\b\\w+@[\\w-]+(\\.[\\w-]+)+\\b",
+        format = "mailto:$0",
+    },
 }
 
 -- 窗口初始化
@@ -35,7 +64,7 @@ config.hyperlink_rules = {
 -- local position_file_path = wezterm.home_dir .. "/.wezterm_position"
 -- local file, err = io.open(position_file_path, "r")
 -- if not file then
---     current_screen = ''
+--     current_screen = ""
 -- else
 --     current_screen = file:read("*all")
 -- end
@@ -76,7 +105,7 @@ wezterm.on("gui-startup", function(cmd)
 end)
 --
 -- -- 监听状态变化事件，记录窗口位置变化
--- wezterm.on('update-status', function(window, pane)
+-- wezterm.on("update-status", function(window, pane)
 --     if window:is_focused() then
 --         --记录当前窗口所位于的屏幕，下次从这打开
 --         -- 一定要用 is_focused 判断，因为 wezterm.gui.screens().active 返回的是拥有焦点的屏幕
