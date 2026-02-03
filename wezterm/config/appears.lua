@@ -3,12 +3,12 @@ local wezterm = require "wezterm"
 local module = {}
 function module.apply(config)
     -- Background image
-    config.window_background_image = "D:\\Picture\\IA\\IA10.jpg"
-    config.window_background_image_hsb = {
-        brightness = 0.02,
-        hue = 1.0,
-        saturation = 1.0,
-    }
+    -- config.window_background_image = "D:\\Picture\\IA\\IA10.jpg"
+    -- config.window_background_image_hsb = {
+    --     brightness = 0.02,
+    --     hue = 1.0,
+    --     saturation = 1.0,
+    -- }
 
     -- Font
     -- Font Hack "SF Mono" "Dank Mono" "Fantasque Sans Mono" "等距更纱黑体 SC"
@@ -60,9 +60,9 @@ function module.apply(config)
     -- Windows
     config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
     -- config.window_close_confirmation = 'NeverPrompt'
-    -- config.window_background_opacity = 0.75
+    config.window_background_opacity = 0.52
     -- （Windows系统） Acrylic|Mica|Tabbed
-    -- config.win32_system_backdrop = 'Acrylic'
+    config.win32_system_backdrop = 'Acrylic'
 end
 
 return module
