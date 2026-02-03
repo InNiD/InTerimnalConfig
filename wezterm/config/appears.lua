@@ -36,6 +36,7 @@ function module.apply(config)
     -- Tab
     -- config.hide_tab_bar_if_only_one_tab = true
     config.tab_bar_at_bottom = true
+    config.tab_max_width = 22
     -- 标签的标题渲染，false 表示使用复古样式
     config.use_fancy_tab_bar = false
 
@@ -58,8 +59,8 @@ function module.apply(config)
     -- config.color_scheme = "Material Palenight (base16)"
 
     -- Windows
-    config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
     -- config.window_close_confirmation = 'NeverPrompt'
+    config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
     config.window_background_opacity = 0.52
     -- （Windows系统） Acrylic|Mica|Tabbed
     config.win32_system_backdrop = 'Acrylic'
