@@ -52,6 +52,6 @@ desc = "Archive selected files (password+header+level)"
 
 
 [[mgr.prepend_keymap]]
-on   = [ "g", "l" ]
+on   = [ "g", "l", "g" ]
 run  = "plugin lazygit"
 desc = "run lazygit"
