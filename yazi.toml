@@ -3,17 +3,16 @@ linemode = "size"
 
 [opener]
 edit = [
-	{ run = 'nvim %*', block = true, desc = "nvim", for = "windows" },
+	{ run = "vim %s", for = "windows", block = true },
 ]
 
 [[plugin.prepend_fetchers]]
-id   = "git"
-name = "*"
-run  = "git"
+url   = "*"
+run   = "git"
+group = "git"
 
 [[plugin.prepend_fetchers]]
-id   = "git"
-name = "*/"
-run  = "git"
-
+url   = "*/"
+run   = "git"
+group = "git"
 
