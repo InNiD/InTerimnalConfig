@@ -22,14 +22,6 @@ function module.apply(config)
     }
     config.font_size = 16
 
-    -- Padding
-    config.window_padding = {
-        left = "0cell",
-        right = "0cell",
-        top = "0cell",
-        bottom = "0cell",
-    }
-
     -- Sroll bar
     -- config.enable_scroll_bar = true
 
@@ -59,11 +51,31 @@ function module.apply(config)
     -- config.color_scheme = "Material Palenight (base16)"
 
     -- Windows
+    -- Acrylic|Mica|Tabbed
+    -- config.win32_system_backdrop = 'Acrylic'
+    config.window_background_opacity = 0.82
     -- config.window_close_confirmation = 'NeverPrompt'
     config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
-    config.window_background_opacity = 0.52
-    -- （Windows系统） Acrylic|Mica|Tabbed
-    config.win32_system_backdrop = 'Acrylic'
+
+    config.window_frame = {
+        border_left_width = '0.45cell',
+        border_right_width = '0.45cell',
+        border_bottom_height = '0.18cell',
+        border_top_height = '0.18cell',
+        border_left_color = '#c6d0f5',
+        border_right_color = '#c6d0f5',
+        border_bottom_color = '#c6d0f5',
+        border_top_color = '#c6d0f5',
+    }
+
+    config.window_padding = {
+        left = "0cell",
+        right = "0cell",
+        top = "0cell",
+        bottom = "0cell",
+    }
+
 end
 
 return module
+
