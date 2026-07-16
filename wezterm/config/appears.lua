@@ -58,14 +58,14 @@ function module.apply(config)
     config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 
     config.window_frame = {
-        border_left_width = '0.45cell',
-        border_right_width = '0.45cell',
-        border_bottom_height = '0.18cell',
-        border_top_height = '0.18cell',
-        border_left_color = '#c6d0f5',
-        border_right_color = '#c6d0f5',
-        border_bottom_color = '#c6d0f5',
-        border_top_color = '#c6d0f5',
+        border_left_width = "0.45cell",
+        border_right_width = "0.45cell",
+        border_bottom_height = "0.18cell",
+        border_top_height = "0.18cell",
+        border_left_color = "#c6d0f5",
+        border_right_color = "#c6d0f5",
+        border_bottom_color = "#c6d0f5",
+        border_top_color = "#c6d0f5",
     }
 
     config.window_padding = {

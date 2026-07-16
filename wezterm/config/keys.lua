@@ -12,7 +12,7 @@ function module.apply(config)
         { key = "d", mods = "LEADER", action = wezterm.action.ScrollByPage(0.5) },
         { key = "g", mods = "LEADER", action = wezterm.action.ScrollToTop },
         { key = "g", mods = "LEADER|SHIFT", action = wezterm.action.ScrollToBottom },
-        -- Leader + F11 全屏
+        -- Leader + Enter 全屏
         {key = "Enter", mods = "LEADER", action = wezterm.action.ToggleFullScreen},
         -- Leader + m:隐藏窗口
         {key = "m", mods = "LEADER", action = wezterm.action.Hide},
@@ -44,7 +44,7 @@ function module.apply(config)
         {key = ":", mods = "LEADER", action = wezterm.action.ShowLauncher},
         -- Leader + c:清除滚动缓冲区
         {key = "c", mods = "LEADER", action = wezterm.action.ClearScrollback("ScrollbackAndViewport")},
-        -- F1:帮助 / 命令面板
+        -- Leader + F1:帮助 / 命令面板
         {key = "F1", mods = "LEADER", action = wezterm.action.ShowLauncherArgs {
             flags = "FUZZY|LAUNCH_MENU_ITEMS|DOMAINS|KEY_ASSIGNMENTS"
         }},
