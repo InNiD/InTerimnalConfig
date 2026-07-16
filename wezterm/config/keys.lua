@@ -40,8 +40,8 @@ function module.apply(config)
         {key = "RightArrow", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({"Right", 5})},
         -- Leader + f:搜索
         {key = "f", mods = "LEADER", action = wezterm.action.Search("CurrentSelectionOrEmptyString")},
-        -- Leader + ::打开 Launcher
-        {key = ":", mods = "LEADER", action = wezterm.action.ShowLauncher},
+        -- Leader + L:打开 Launcher
+        {key = "L", mods = "LEADER", action = wezterm.action.ShowLauncher},
         -- Leader + c:清除滚动缓冲区
         {key = "c", mods = "LEADER", action = wezterm.action.ClearScrollback("ScrollbackAndViewport")},
         -- Leader + F1:帮助 / 命令面板
