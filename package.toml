@@ -1,27 +1,27 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "5d5c480"
-hash = "1e3b6c8b03dae81c3672ec9e9700b666"
+rev = "6229767"
+hash = "acf841be033b88195a008c65fd973883"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "5d5c480"
-hash = "b94720e0ef40cb0e97093fabd9694775"
+rev = "6229767"
+hash = "347cc6b190eb0c2fd60513cc7ae37412"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mount"
-rev = "5d5c480"
-hash = "68c6695308657c3d9124cb49584c62d3"
+rev = "6229767"
+hash = "93f11eb13529048ecaa975fa5b6ca73a"
 
 [[plugin.deps]]
 use = "Rolv-Apneseth/starship"
-rev = "a837101"
-hash = "d396365cef932fce588b80df69438f2e"
+rev = "ea92cf4"
+hash = "58159cb9c55262b110917d366070aa89"
 
 [[plugin.deps]]
 use = "KKV9/compress"
-rev = "e60e122"
-hash = "619ce2db450b20078501ae037f8697ad"
+rev = "80e5268"
+hash = "784564dc57d3bc9b5752b6ceecd5d882"
 
 [[plugin.deps]]
 use = "Lil-Dank/lazygit"
@@ -30,25 +30,25 @@ hash = "e467330cba1935c99c89c3cfb078389c"
 
 [[flavor.deps]]
 use = "Chromium-3-Oxide/everforest-medium"
-rev = "4eede31"
-hash = "6b41c6cc57ba03bb2ef0bad18837f849"
+rev = "e1ead7b"
+hash = "774b4f996ea82cf49797435c523d06aa"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:dracula"
-rev = "0670801"
-hash = "fee9eeb8bf3ac3ed251812cbc0452bbd"
+rev = "1183892"
+hash = "a8625ba18769fb8e6da99dc15e52c9ef"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "0670801"
-hash = "5ebc8659108fcb68fe853e523115ed3c"
+rev = "1183892"
+hash = "80d8146e90f2f6b0883d3682325f27c0"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
-rev = "0670801"
-hash = "fa7b78b7965b2065c48399d47144b35e"
+rev = "1183892"
+hash = "5a05e47ffd29ca79255dd65070f7536c"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-frappe"
-rev = "0670801"
-hash = "ba354c5b402b108c336a25d5de73316b"
+rev = "1183892"
+hash = "3de2a86359edb2d30c83be1ca78fbd55"
