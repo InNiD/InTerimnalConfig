@@ -1,54 +1,84 @@
 local wezterm = require "wezterm"
 
+wezterm.on("update-right-status", function(window, pane)
+    local name = window:active_key_table()
+    if name == "resize_pane" then
+        name = " 󰙖  "
+    elseif name == "activate_pane" then
+        name = " 󰁁 "
+    end
+    window:set_right_status(name or '')
+end)
+
 local module = {}
 function module.apply(config)
-    config.leader = {key = "a", mods = "ALT", timeout_milliseconds = 2000}
+    config.disable_default_key_bindings = true
+    config.leader = { key = "a", mods = "ALT", timeout_milliseconds = 2000 }
     config.keys = {
-        -- Ctrl+Shift+N 新窗口
-        -- { key = "N", mods = "SHIFT|CTRL", action = wezterm.action.SpawnWindow },
         { key = "y", mods = "LEADER", action = wezterm.action.CopyTo "ClipboardAndPrimarySelection", },
         { key = "p", mods = "LEADER", action = wezterm.action.PasteFrom "Clipboard" },
         { key = "u", mods = "LEADER", action = wezterm.action.ScrollByPage(-0.5) },
         { key = "d", mods = "LEADER", action = wezterm.action.ScrollByPage(0.5) },
+        { key = "b", mods = "LEADER", action = wezterm.action.ScrollByPage(-1) },
+        { key = "f", mods = "LEADER", action = wezterm.action.ScrollByPage(1) },
         { key = "g", mods = "LEADER", action = wezterm.action.ScrollToTop },
         { key = "g", mods = "LEADER|SHIFT", action = wezterm.action.ScrollToBottom },
-        -- Leader + Enter 全屏
-        {key = "Enter", mods = "LEADER", action = wezterm.action.ToggleFullScreen},
-        -- Leader + m:隐藏窗口
-        {key = "m", mods = "LEADER", action = wezterm.action.Hide},
-        -- Leader + n:新建标签页
-        {key = "n", mods = "LEADER", action = wezterm.action.SpawnTab("CurrentPaneDomain")},
-        -- Leader + w:关闭当前标签页(不确认)
-        {key = "w", mods = "LEADER", action = wezterm.action.CloseCurrentTab({confirm = false})},
-        -- Leader + Tab:切换到下一个标签页
-        {key = "l", mods = "LEADER", action = wezterm.action.ActivateTabRelative(1)},
-        -- Leader + Shift + Tab:切换到上一个标签页
-        {key = "h", mods = "LEADER", action = wezterm.action.ActivateTabRelative(-1)},
-        -- Leader + \\:水平分割
-        {key = "\\", mods = "LEADER", action = wezterm.action.SplitHorizontal({domain = "CurrentPaneDomain"})},
-        -- Leader + -:垂直分割
-        {key = "-", mods = "LEADER", action = wezterm.action.SplitVertical({domain = "CurrentPaneDomain"})},
-        -- Leader + 方向键:在窗格之间移动
-        {key = "LeftArrow", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Left")},
-        {key = "DownArrow", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Down")},
-        {key = "UpArrow", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Up")},
-        {key = "RightArrow", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Right")},
-        -- Ctrl + Shift + 方向键:调整窗格大小
-        {key = "LeftArrow",  mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({"Left", 5})},
-        {key = "DownArrow",  mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({"Down", 5})},
-        {key = "UpArrow",    mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({"Up", 5})},
-        {key = "RightArrow", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({"Right", 5})},
-        -- Leader + f:搜索
-        {key = "f", mods = "LEADER", action = wezterm.action.Search("CurrentSelectionOrEmptyString")},
-        -- Leader + L:打开 Launcher
-        {key = "L", mods = "LEADER", action = wezterm.action.ShowLauncher},
-        -- Leader + c:清除滚动缓冲区
-        {key = "c", mods = "LEADER", action = wezterm.action.ClearScrollback("ScrollbackAndViewport")},
-        -- Leader + F1:帮助 / 命令面板
-        {key = "F1", mods = "LEADER", action = wezterm.action.ShowLauncherArgs {
-            flags = "FUZZY|LAUNCH_MENU_ITEMS|DOMAINS|KEY_ASSIGNMENTS"
-        }},
+        { key = "m", mods = "LEADER", action = wezterm.action.Hide },
+        { key = "n", mods = "LEADER", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
+        { key = "w", mods = "LEADER", action = wezterm.action.CloseCurrentTab({confirm = false}) },
+        { key = "l", mods = "LEADER", action = wezterm.action.ActivateTabRelative(1)},
+        { key = "h", mods = "LEADER", action = wezterm.action.ActivateTabRelative(-1)},
+        { key = "\\", mods = "LEADER", action = wezterm.action.SplitHorizontal({domain = "CurrentPaneDomain"}) },
+        { key = "-", mods = "LEADER", action = wezterm.action.SplitVertical({domain = "CurrentPaneDomain"}) },
+        -- { key = "h", mods = "LEADER|ALT", action = wezterm.action.ActivatePaneDirection("Left") },
+        -- { key = "j", mods = "LEADER|ALT", action = wezterm.action.ActivatePaneDirection("Down") },
+        -- { key = "k", mods = "LEADER|ALT", action = wezterm.action.ActivatePaneDirection("Up") },
+        -- { key = "l", mods = "LEADER|ALT", action = wezterm.action.ActivatePaneDirection("Right") },
+        -- { key = "LeftArrow",  mods = "LEADER", action = wezterm.action.AdjustPaneSize({"Left", 5}) },
+        -- { key = "DownArrow",  mods = "LEADER", action = wezterm.action.AdjustPaneSize({"Down", 5}) },
+        -- { key = "UpArrow",    mods = "LEADER", action = wezterm.action.AdjustPaneSize({"Up", 5}) },
+        -- { key = "RightArrow", mods = "LEADER", action = wezterm.action.AdjustPaneSize({"Right", 5}) },
+        { key = "/", mods = "LEADER", action = wezterm.action.Search("CurrentSelectionOrEmptyString") },
+        { key = "L", mods = "LEADER", action = wezterm.action.ShowLauncher },
+        { key = "c", mods = "LEADER", action = wezterm.action.ClearScrollback("ScrollbackAndViewport") },
+        { key = "F1", mods = "LEADER", action = wezterm.action.ShowLauncherArgs {flags = "FUZZY|LAUNCH_MENU_ITEMS|DOMAINS|KEY_ASSIGNMENTS"} },
+        {
+            key = "r",
+            mods = "LEADER",
+            action = wezterm.action.ActivateKeyTable {
+                name = "resize_pane",
+                one_shot = false,
+            },
+        },
+        {
+            key = "a",
+            mods = "LEADER",
+            action = wezterm.action.ActivateKeyTable {
+                name = "activate_pane",
+                one_shot = false,
+            },
+        },
+    }
+    config.key_tables = {
+        resize_pane = {
+            { key = "h", action = wezterm.action.AdjustPaneSize { "Left", 1 } },
+            { key = "l", action = wezterm.action.AdjustPaneSize { "Right", 1 } },
+            { key = "k", action = wezterm.action.AdjustPaneSize { "Up", 1 } },
+            { key = "j", action = wezterm.action.AdjustPaneSize { "Down", 1 } },
+
+            { key = "c", mods = "CTRL", action = "ClearKeyTableStack" },
+        },
+
+        activate_pane = {
+            { key = "h", action = wezterm.action.ActivatePaneDirection "Left" },
+            { key = "l", action = wezterm.action.ActivatePaneDirection "Right" },
+            { key = "k", action = wezterm.action.ActivatePaneDirection "Up" },
+            { key = "j", action = wezterm.action.ActivatePaneDirection "Down" },
+
+            { key = "c", mods = "CTRL", action = "ClearKeyTableStack" },
+        },
     }
 end
 
 return module
+

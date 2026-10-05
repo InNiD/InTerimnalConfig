@@ -10,6 +10,9 @@ function module.apply(config)
     --     saturation = 1.0,
     -- }
 
+    -- Cursor
+    -- config.force_reverse_video_cursor = true
+
     -- Font
     -- Font Hack "SF Mono" "Dank Mono" "Fantasque Sans Mono" "等距更纱黑体 SC"
     -- "Intel One Mono" "MonacoLigaturized Nerd Font Mono" "Monaco Nerd Font Mono"
@@ -28,8 +31,7 @@ function module.apply(config)
     -- Tab
     -- config.hide_tab_bar_if_only_one_tab = true
     config.tab_bar_at_bottom = true
-    config.tab_max_width = 22
-    -- 标签的标题渲染，false 表示使用复古样式
+    config.tab_max_width = 16
     config.use_fancy_tab_bar = false
 
     -- Theme
@@ -51,10 +53,11 @@ function module.apply(config)
     -- config.color_scheme = "Material Palenight (base16)"
 
     -- Windows
+    -- config.term = "wezterm"
+    -- config.text_background_opacity = 0.5
     -- Acrylic|Mica|Tabbed
     -- config.win32_system_backdrop = 'Acrylic'
     config.window_background_opacity = 0.82
-    -- config.window_close_confirmation = 'NeverPrompt'
     config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 
     config.window_frame = {
