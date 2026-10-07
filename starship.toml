@@ -41,12 +41,12 @@ RedHatEnterprise = "󱄛"
 [username]
 style_user = "fg:mauve"
 style_root = "fg:mauve"
-format = '[\[InNiD\]-]($style)'
+format = '[\[InNiD\]]($style)'
 show_always = true
 
 [directory]
-format = '[➜\[$path\]-]($style)'
-style = "fg:blue"
+format = '[-➜](bold fg:blue)[\[$path\]]($style)'
+style = "fg:sapphire"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -57,11 +57,11 @@ style = "fg:blue"
 
 [git_branch]
 symbol = ""
-style = "fg:sky"
-format = '[➜\[$symbol $branch ]($style)'
+style = "fg:teal"
+format = '[-➜](bold fg:sky)[\[$symbol $branch ]($style)'
 
 [git_status]
-style = "fg:sky"
+style = "fg:teal"
 format = '[($all_status$ahead_behind)\]]($style)'
 
 [character]
