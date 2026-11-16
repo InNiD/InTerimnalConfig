@@ -58,7 +58,7 @@ style = "fg:sapphire"
 [git_branch]
 symbol = ""
 style = "fg:teal"
-format = '[-➜](bold fg:sky)[\[$symbol $branch ]($style)'
+format = '[-➜](bold fg:sky)[\[$symbol $branch]($style)'
 
 [git_status]
 style = "fg:teal"
