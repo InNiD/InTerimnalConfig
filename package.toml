@@ -23,11 +23,6 @@ use = "KKV9/compress"
 rev = "80e5268"
 hash = "784564dc57d3bc9b5752b6ceecd5d882"
 
-[[plugin.deps]]
-use = "Lil-Dank/lazygit"
-rev = "e73fd74"
-hash = "e467330cba1935c99c89c3cfb078389c"
-
 [[flavor.deps]]
 use = "Chromium-3-Oxide/everforest-medium"
 rev = "e1ead7b"

@@ -1,1 +1,1 @@
-# My yazi config
+# My Yazi Config
